@@ -9,8 +9,92 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
-    <link rel="stylesheet" href="{{ asset('css/login.css') }}">
+    <!-- <link rel="stylesheet" href="{{ asset('css/login.css') }}"> -->
 </head>
+
+<style>
+    /* Fondo general */
+    body {
+        background: #f8f9fa;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    /* Card personalizada */
+    .custom-card {
+        background-color: #ffa500;
+        /* Naranja */
+        border-radius: 15px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+        color: #fff;
+        padding: 30px;
+    }
+
+    /* Logo */
+    .logo-img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 3px solid white;
+    }
+
+    /* Títulos */
+    .card h4 {
+        font-weight: bold;
+        color: #000000;
+    }
+
+    /* Input groups */
+    .input-group-text {
+        background-color: rgba(0, 0, 0, 0.729);
+        border: none;
+        color: #fff;
+    }
+
+    .form-control {
+        border: none;
+        background-color: rgb(255, 255, 255);
+        color: #000000;
+    }
+
+    .form-control::placeholder {
+        color: #000000;
+    }
+
+    /* Botones */
+    .btn {
+        font-weight: bold;
+    }
+
+    .btn-light {
+        background-color: #ffffff;
+        color: #333;
+    }
+
+    .btn-light:hover {
+        background-color: #e6e6e6;
+    }
+
+    /* Checkbox label */
+    .custom-control-label {
+        cursor: pointer;
+        color: #fff;
+    }
+
+    /* Responsive: columnas apiladas en móvil */
+    @media (max-width: 767px) {
+        .custom-card .row {
+            flex-direction: column;
+        }
+
+        .custom-card .col-md-6 {
+            border-right: none !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
+        }
+    }
+</style>
 
 <body class="d-flex justify-content-center align-items-center bg-dark" style="height: 100vh;">
     <div class="container-fluid vh-100 d-flex justify-content-center align-items-center">

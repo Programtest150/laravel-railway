@@ -17,31 +17,20 @@
         crossorigin="anonymous" />
 </head>
 
-<body class="d-flex justify-content-center align-items-center bg-dark" style="height: 100vh;">
+<body>
     <header>
-        <!-- place navbar here -->
+        <nav class="navbar navbar-expand navbar-dark bg-dark">
+            <a class="navbar-brand ms-4" href="#">Parcial</a>
+            <ul class="nav navbar-nav ms-auto me-4 p-2">
+                <form action="{{ route('logout') }}" method="POST" style="display: inline;">
+                    @csrf
+                    <button type="submit" class="btn btn-danger">
+                        Cerrar sesión
+                    </button>
+                </form>
+            </ul>
+        </nav>
     </header>
-
-    <div class="container">
-        <div class="row">
-            <div class="row">
-                <div class="col-xs-1-12">
-                    <div class="card">
-                        <div class="card-body">
-                            <h3 class="card-title">Gracias por Registrarte..!!</h3>
-                            <form action="{{ route('logout') }}" method="POST" style="display: inline;">
-                                @csrf
-                                <button type="submit" class="btn btn-danger">
-                                    Cerrar sesión
-                                </button>
-                            </form>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <script
         src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"

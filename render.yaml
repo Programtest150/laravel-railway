@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: laravel-app
+    runtime: docker
+    repo: https://github.com/Programtest150/laravel-railway
+    branch: main
+    plan: free
+    autoDeploy: true
+    dockerContext: .
+    dockerfilePath: Dockerfile

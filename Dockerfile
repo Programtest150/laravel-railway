@@ -5,15 +5,18 @@ RUN apt-get update && apt-get install -y \
     git unzip curl libzip-dev libpng-dev libonig-dev libxml2-dev \
     && docker-php-ext-install pdo_mysql zip mbstring exif pcntl bcmath gd
 
-# Instala Composer
+# Instala Composer desde la imagen oficial
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-# Copia todo el proyecto al contenedor
+# Copia el proyecto al contenedor
 COPY . /var/www/html
 
 WORKDIR /var/www/html
 
-# Cambia el DocumentRoot para que Apache sirva desde public/
+# Instala las dependencias PHP con Composer
+RUN composer install --no-dev --optimize-autoloader
+
+# Cambia el DocumentRoot para que Apache sirva desde /public
 RUN sed -ri -e 's!/var/www/html!/var/www/html/public!g' /etc/apache2/sites-available/000-default.conf
 
 # Ajusta permisos para storage, bootstrap/cache y public
